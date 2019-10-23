@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 39.0, 91.0, 996.0, 695.0 ],
+		"rect" : [ 38.0, 91.0, 998.0, 695.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 481.0, 308.0, 20.0, 20.0 ]
+					"patching_rect" : [ 481.0, 308.0, 20.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 837.0, 304.0, 118.0, 118.0 ]
 				}
 
 			}
@@ -60,7 +62,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 537.0, 308.0, 50.0, 23.0 ]
+					"patching_rect" : [ 537.0, 308.0, 50.0, 23.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 838.5, 272.0, 115.0, 23.0 ]
 				}
 
 			}
@@ -100,6 +104,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 376.0, 356.5, 60.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 617.0, 265.5, 60.0, 22.0 ],
 					"text" : "/test hello"
 				}
 
@@ -224,13 +230,26 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.380392156862745, 0.380392156862745, 0.380392156862745, 1.0 ],
+					"bgcolor2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_color1" : [ 0.380392156862745, 0.380392156862745, 0.380392156862745, 1.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "gradient",
+					"gradient" : 1,
 					"id" : "obj-12",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 138.0, 319.0, 66.0, 22.0 ],
-					"text" : "script start"
+					"presentation" : 1,
+					"presentation_rect" : [ 140.0, 265.5, 111.0, 22.0 ],
+					"text" : "script start",
+					"textcolor" : [ 0.960784316062927, 0.960784316062927, 0.960784316062927, 1.0 ]
 				}
 
 			}
@@ -496,7 +515,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "test.js",
-				"bootpath" : "~/Digitalutveckling/InsidaUtsida/Maxpatch",
+				"bootpath" : "~/Digitalutveckling/kreativ-data/MAX-patch-with-nodejs",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
