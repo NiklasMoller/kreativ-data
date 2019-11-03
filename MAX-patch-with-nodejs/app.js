@@ -2,7 +2,7 @@ var express = require('express'); // Using express: http://expressjs.com/
 var app = express(); //Create the app
 var server = require('http').createServer(app); //'Http' allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
 // Creates HTTP server that listens to server ports and gives a response back to the client.
-var io = require('socket.io').listen(server);
+var io = require('socket.io')({ pingInterval: 750 }).listen(server);
 
 server.listen(process.env.PORT || 3000); //process.env.PORT is related to deploying on heroku
 
@@ -53,8 +53,10 @@ io.sockets.on('connection',
         //connections.push(socket); //dont know wht this is for
 
         // Send it to all other clients
-        socket.broadcast.emit('OSC', data);
-        socket.broadcast.emit("Sending a message from server that was triggered by OSC")
+        socket.broadcast.emit('OSC', {
+          data: "Hello Unity - sending from the server side"
+        });
+        //socket.broadcast.emit("Sending a message from server that was triggered by OSC")
 
         // This is a way to send to everyone including sender
         //io.sockets.emit('message', "this goes to everyone");
