@@ -6,7 +6,6 @@ using SocketIO;
 public class NetworkClient : SocketIOComponent
 {
 
-    Material m_Material;
 
     [Header("Network Client")]
     [SerializeField]
@@ -14,14 +13,20 @@ public class NetworkClient : SocketIOComponent
 
     private Dictionary<string, GameObject> serverObjects;
 
+    private ColorChanger myCube;
+
+
     // Start is called before the first frame update
     public override void Start()
     {
-        base.Start();
-        //Fetch the Material from the Renderer of the GameObject
-        m_Material = GetComponent<Renderer>().material;
+        base.Start(); //Always on top of this scope
+
         initialize();
         setupEvents();
+
+        myCube = GameObject.FindObjectOfType<ColorChanger>();
+
+
         
     }
 
@@ -46,9 +51,10 @@ public class NetworkClient : SocketIOComponent
 
         On("OSC", (E) =>
         {
-        Debug.Log(E.data.ToString());
-            // Change the Color of the GameObject when the mouse hovers over it
-            m_Material.color = Color.red;
+        //Debug.Log(E.data.ToString());
+            Debug.Log("Got OSC and updating color");
+            myCube.OnOSC();
+       
         });
 
 

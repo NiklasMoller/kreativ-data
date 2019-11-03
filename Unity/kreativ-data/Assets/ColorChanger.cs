@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
+
+    private Color basicColor = Color.green;
+    private Color hoverColor = Color.red;
+    private Renderer renderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        renderer = GetComponent<Renderer>();
+        renderer.material.color = basicColor;
+    }
+
+    public void OnOSC()
+    {
+        renderer.material.color = hoverColor;
     }
 
     // Update is called once per frame
