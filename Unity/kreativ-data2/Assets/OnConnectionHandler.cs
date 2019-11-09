@@ -7,7 +7,7 @@ using UnitySocketIO;
 public class OnConnectionHandler : MonoBehaviour
 {
 
-    public SocketIOController io;
+    public SocketIOController niklasIo;
     public ColorHandler myCube;
 
 
@@ -16,20 +16,21 @@ public class OnConnectionHandler : MonoBehaviour
         {
 
         myCube = GameObject.FindObjectOfType<ColorHandler>();
+   
 
-        io.On("connect", (SocketIOEvent e) =>
+        niklasIo.On("connect", (SocketIOEvent e) =>
             {
                 Debug.Log("SocketIO connected");
             });
 
-            io.On("OSC", (SocketIOEvent e) =>
+            niklasIo.On("OSC", (SocketIOEvent e) =>
             {
                 Debug.Log("Receievd OSC!");
                 myCube.ChangeColor();
              
             });
 
-        io.Connect();
+        niklasIo.Connect();
 
     }
 

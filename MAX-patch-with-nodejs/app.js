@@ -6,16 +6,12 @@ var io = require('socket.io')({ pingInterval: 750 }).listen(server);
 
 server.listen(process.env.PORT || 3000); //process.env.PORT is related to deploying on heroku
 
-
-
-
 //Set up the server locally on port 3000. This is a shorter version of below
 /*
 app.listen(3000, () =>
     console.log('Example app listening on port 3000!'),
 );
 */
-
 
 // This call back just tells us that the server has started
 function listen() {
@@ -29,11 +25,11 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+app.use("/TemplateData",express.static(__dirname + "/TemplateData"));
+app.use("/Build",express.static(__dirname + "/Build"));
 
 //Use the following code to serve images, CSS files, and JavaScript files in a directory named public:
 //app.use(express.static('public'));
-
-
 
 
 // Register a callback function to run when we have an individual connection

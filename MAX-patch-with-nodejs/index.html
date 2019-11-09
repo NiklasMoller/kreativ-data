@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Niklas MAX text</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | kreativ-data2</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/UnityWEBGLBuild4.json", {onProgress: UnityProgress});
+    </script>
   </head>
   <body>
-    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-
-    <script>
-
-    var socket = io();
-
-        socket.on('OSC',
-              // When we receive data
-              function(data) {
-                console.log("Got: " + data);
-
-              });
-
-
-
-
-    </script>
-
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">kreativ-data2</div>
+      </div>
+    </div>
   </body>
 </html>
