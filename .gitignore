@@ -1,4 +1,5 @@
 **/ESP8266sendMessage/Secrets.h
+** /MQTT-subscriber-ESP8266/mqttPubSub/Secrets.h
 
 
 # This .gitignore file should be placed at the root of your Unity project directory
