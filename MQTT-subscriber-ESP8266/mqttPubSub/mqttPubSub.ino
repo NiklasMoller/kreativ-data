@@ -1,16 +1,22 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include "Secrets.h"
- 
+#include "mySecrets.h"
+#include <ArduinoJson.h>
+
 const char* ssid = mySSID;
 const char* password =  myPASSWORD;
-
 
 const char* mqttServer = "broker.hivemq.com";
 const int mqttPort = 1883;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+//RGB values to be updtated via MQTT
+int rValue;
+int gValue;
+int bValue; 
+
  
 void setup() {
  
@@ -71,9 +77,28 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   Serial.println();
 
+  //Deserialize with ArduinoJSON
+  //Eventually change the size 256 to a smaller byte size
+  StaticJsonDocument<256> doc;
+  DeserializationError err = deserializeJson(doc, payload, length);
+
+    if (err){ 
+      Serial.print(F("deserializeJson() failed with code ")); 
+      Serial.println(err.c_str());
+      }
 
 
+  rValue = doc["R"];
+  gValue = doc["G"];
+  bValue = doc["B"];
 
+Serial.print("Success getting the values RGB");
+Serial.print(rValue);
+Serial.print(" ");
+Serial.print(gValue);
+Serial.print(" ");
+Serial.print(bValue);
+Serial.print(" ");
 
 }
 
