@@ -1,3 +1,6 @@
+//For NODEMCU
+#define FASTLED_ESP8266_NODEMCU_PIN_ORDER
+
 //Schematics found here:
 //https://randomnerdtutorials.com/guide-for-ws2812b-addressable-rgb-led-strip-with-arduino/
 
@@ -19,7 +22,7 @@
 #define NUM_LEDS 240
 
 // Data pin that led data will be written out over
-#define DATA_PIN 3
+#define DATA_PIN 2 //Third pin to the right of the Wifi Chip
 
 // Clock pin only needed for SPI based chipsets when not using hardware SPI
 //#define CLOCK_PIN 8
