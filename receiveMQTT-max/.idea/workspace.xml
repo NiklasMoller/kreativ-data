@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51c6a92d-b972-43fa-914b-6a155a276268" name="Default Changelist" comment="" />
+    <list default="true" id="359c75f5-fd0e-4fd4-baa4-dbc08b638d62" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1S6AgsVfZNwLxgY7mTjK4RRUWcl" />
+  <component name="ProjectId" id="1Wo2QRhgzXGC8gsjmw5O1749Br6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../receiveMQTT-max" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../The Internal And The internet" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -34,21 +41,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="51c6a92d-b972-43fa-914b-6a155a276268" name="Default Changelist" comment="" />
-      <created>1570873785216</created>
+      <changelist id="359c75f5-fd0e-4fd4-baa4-dbc08b638d62" name="Default Changelist" comment="" />
+      <created>1579801610976</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570873785216</updated>
-      <workItem from="1570873786539" duration="8344000" />
-      <workItem from="1571135056830" duration="14000" />
-      <workItem from="1571852469798" duration="981000" />
-      <workItem from="1573313353693" duration="2299000" />
-      <workItem from="1579178678093" duration="909000" />
-      <workItem from="1579184563973" duration="939000" />
-      <workItem from="1579188056521" duration="600000" />
-      <workItem from="1579252614177" duration="40000" />
-      <workItem from="1579714683256" duration="612000" />
-      <workItem from="1579801196824" duration="1083000" />
+      <updated>1579801610976</updated>
+      <workItem from="1579801612357" duration="96000" />
+      <workItem from="1579801782120" duration="636000" />
     </task>
     <servers />
   </component>
