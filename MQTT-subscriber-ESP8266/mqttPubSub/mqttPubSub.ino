@@ -66,15 +66,15 @@ void setup() {
   client.setServer(mqttServer, mqttPort);
   client.setCallback(callback);
 
+  receivedColor = GREEN; //Initializing the variable
+
   client.subscribe("kreativData/#");
 
 }
 
 
 
-// ------------------------------------
-
-
+// -------------------- MAIN LOOP ----------------
 void loop() {
 
   if (!client.connected()) {
@@ -84,13 +84,16 @@ void loop() {
   client.loop();
 
   // fade all existing pixels toward receivedColor by "3" (out of 255)
-  fadeTowardColor( leds, NUM_LEDS, green, 3);
+  fadeTowardColor(leds, NUM_LEDS, receivedColor, 1);
 
   FastLED.show();
+
+  delay(60);
 
 }
 
 
+// -------------------- MQTT CALLBACK ----------------
 void callback(char* topic, byte* payload, unsigned int length) {
 
   Serial.print("Message arrived [");
@@ -118,12 +121,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
     gValue = doc["G"];
   bValue = doc["B"];
 
-
   receivedColor = CRGB(rValue, gValue, bValue);
-
-  switchColor(receivedColor);
+  //switchColor(receivedColor);
   
-
 }
 
 
@@ -175,7 +175,7 @@ void switchColor(CRGB color) {
 
 // Fade an entire array of CRGBs toward a given background color by a given amount
 // This function modifies the pixel array in place.
-void fadeTowardColor( CRGB* L, uint16_t N, const CRGB& bgColor, uint8_t fadeAmount)
+void fadeTowardColor( CRGB* L, uint16_t N, const CRGB& bgColor, uint32_t fadeAmount)
 {
   for( uint16_t i = 0; i < N; i++) {
     fadeTowardColor( L[i], bgColor, fadeAmount);
@@ -185,10 +185,28 @@ void fadeTowardColor( CRGB* L, uint16_t N, const CRGB& bgColor, uint8_t fadeAmou
 // Blend one CRGB color toward another CRGB color by a given amount.
 // Blending is linear, and done in the RGB color space.
 // This function modifies 'cur' in place.
-CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
+CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint32_t amount)
 {
   nblendU8TowardU8( cur.red,   target.red,   amount);
   nblendU8TowardU8( cur.green, target.green, amount);
   nblendU8TowardU8( cur.blue,  target.blue,  amount);
   return cur;
+}
+
+
+// Helper function that blends one uint8_t toward another by a given amount
+//Changes to uint32_t
+void nblendU8TowardU8( uint8_t& cur, const uint8_t target, uint32_t amount)
+{
+  if( cur == target) return;
+  
+  if( cur < target ) {
+    uint8_t delta = target - cur;
+    delta = scale8_video( delta, amount);
+    cur += delta;
+  } else {
+    uint8_t delta = cur - target;
+    delta = scale8_video( delta, amount);
+    cur -= delta;
+  }
 }
