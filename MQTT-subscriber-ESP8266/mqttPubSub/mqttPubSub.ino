@@ -32,8 +32,8 @@ uint8_t bValue;
 
 //-------- WI-FI ---------
 WiFiClient espClient;
-const char* ssid = mySSID;
-const char* password =  myPASSWORD;
+const char* ssid = mySSIDskogen;
+const char* password =  myPASSWORDskogen;
 
 
 //--------- MQTT ---------
