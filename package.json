@@ -5,7 +5,7 @@
   "main": "videostream/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "videostream/index.js"
+    "start": "node videostream/index.js"
   },
   "author": "Niklas Möller",
   "license": "ISC",
