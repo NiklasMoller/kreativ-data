@@ -1,1 +1,1 @@
-web: node videostream/index.js
+web: node ./videostream/index.js
