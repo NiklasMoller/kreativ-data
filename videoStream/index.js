@@ -15,6 +15,8 @@ http.listen(port, function(){
     console.log('listening on *:3000');
 });
 
+app.get('/', (req, res) => res.send('Hello World!'));
+
 
 app.get('/video', function(req, res) {
   const path = 'test.mp4'
