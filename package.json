@@ -2,10 +2,10 @@
   "name": "videostream",
   "version": "1.0.0",
   "description": "Express server to send video streams",
-  "main": "index.js",
+  "main": "videostream/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "index.js"
+    "start": "videostream/index.js"
   },
   "author": "Niklas Möller",
   "license": "ISC",
